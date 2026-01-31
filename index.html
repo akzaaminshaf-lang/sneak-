@@ -1,0 +1,106 @@
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hey ❤️</title>
+
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      font-family: Arial, Helvetica, sans-serif;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .card {
+      background: rgba(0, 0, 0, 0.25);
+      padding: 40px 30px;
+      border-radius: 20px;
+      width: 90%;
+      max-width: 380px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    h1 {
+      margin-top: 0;
+      font-size: 32px;
+    }
+
+    h2 {
+      font-size: 22px;
+      margin: 20px 0;
+    }
+
+    button {
+      border: none;
+      border-radius: 30px;
+      padding: 12px 28px;
+      font-size: 16px;
+      cursor: pointer;
+      margin: 10px;
+    }
+
+    .yes {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .no {
+      background-color: #f44336;
+      color: white;
+      position: absolute;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="card" id="card">
+    <h1>Hey <span id="herName"></span> ❤️</h1>
+    <p>I’ve been wanting to ask you something…</p>
+    <h2>Will you be mine? 🥺</h2>
+
+    <button class="yes" onclick="yesClicked()">Yes 😍</button>
+    <button class="no" onmouseover="moveButton(this)">No 🙈</button>
+  </div>
+
+  <script>
+    const herName = "SPARKKK⚡";
+
+    document.getElementById("herName").innerText = herName;
+
+    function yesClicked() {
+      document.body.innerHTML = `
+        <div style="
+          display:flex;
+          flex-direction:column;
+          justify-content:center;
+          align-items:center;
+          height:100vh;
+          text-align:center;
+          color:white;
+        ">
+          <h1>YAYYYY 🎉❤️</h1>
+          <p>${herName}, you just made my day.</p>
+          <p>Now you’re officially stuck with me 😌</p>
+        </div>
+      `;
+    }
+
+    function moveButton(btn) {
+      const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+      const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+      btn.style.left = x + "px";
+      btn.style.top = y + "px";
+    }
+  </script>
+
+</body>
+</html>
